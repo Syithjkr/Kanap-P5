@@ -39,3 +39,10 @@ const productAddInfos = async () => {
  
    //Description
    description.innerHTML = product.description;
+
+    //Boucle pour la liste déroulante du choix de couleurs
+  for (let i = 0; i < product.colors.length; i++) {
+    selectorColor = document.getElementById("colors");
+    selectorColor.innerHTML += `
+    <option value="${product.colors[i]}">${product.colors[i]}</option>`;
+  }
