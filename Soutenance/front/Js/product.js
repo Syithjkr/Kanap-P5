@@ -90,3 +90,7 @@ validateInput.addEventListener("click", () => {
       setToLocalStorage();
     }
   }
+  // Fonction qui envoie notre objet au localStorage
+  function setToLocalStorage() {
+    let storage = JSON.parse(localStorage.getItem("panier"));
+    
