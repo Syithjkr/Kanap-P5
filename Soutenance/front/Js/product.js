@@ -54,3 +54,8 @@ const productAddInfos = async () => {
   cartUser.altTxt = product.altTxt;
 };
 productAddInfos();
+
+// On envoie la couleur choisie de la liste déroulante dans l'objet cartUser
+colorSelector.addEventListener("input", (e) => {
+  cartUser.color = e.target.value;
+});
