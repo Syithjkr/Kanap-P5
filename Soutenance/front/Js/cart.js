@@ -60,3 +60,12 @@ if (location.href.search("confirmation") > 0) {
       `;
           document.getElementById("cart__items").innerHTML += html;
         }
+// Affichage de la quantité et du prix total
+document.getElementById("totalQuantity").innerHTML = qty;
+document.getElementById("totalPrice").innerHTML = Intl.NumberFormat(
+  "fr-FR",
+  {
+    style: "currency",
+    currency: "EUR",
+  }
+).format(total);
