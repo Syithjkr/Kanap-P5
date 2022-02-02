@@ -93,4 +93,51 @@ validateInput.addEventListener("click", () => {
   // Fonction qui envoie notre objet au localStorage
   function setToLocalStorage() {
     let storage = JSON.parse(localStorage.getItem("panier"));
-    
+    // SI notre panier n'est pas vide
+    if (storage) {
+      // On cherche l'article avec le même id et la même color que notre obj cartUser ...
+      let getProduct = storage.find(
+        (element) =>
+          element.id == cartUser.id && element.color == cartUser.color
+      );
+      // ... et on met à jour sa quantité
+      if (getProduct) {
+        getProduct.quantity += cartUser.quantity;
+        // On envoie le nouveau panier dans le localStorage
+        localStorage.setItem("panier", JSON.stringify(storage));
+        new Swal({
+          title: "La quantité désirée à bien été mise à jour",
+          icon: "success",
+          iconColor: "#3498db",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        return;
+      }
+      // On crée un nouveau objet dans le panier si la couleur est différente
+      storage.push(cartUser);
+      localStorage.setItem("panier", JSON.stringify(storage));
+      new Swal({
+        title: "Votre produit à bien été ajouté au panier",
+        icon: "success",
+        iconColor: "#3498db",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+    // SINON le panier est vide on crée le premier objet
+    else {
+      const cart = [];
+      cart.push(cartUser);
+      localStorage.setItem("panier", JSON.stringify(cart));
+      new Swal({
+        title: "Votre produit à bien été ajouté au panier",
+        icon: "success",
+        iconColor: "#3498db",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+  }
+  verifyInvalidInput();
+});
