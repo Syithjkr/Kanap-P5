@@ -98,3 +98,15 @@ document.getElementById("totalPrice").innerHTML = Intl.NumberFormat(
   let vignettes = document.getElementsByClassName("cart__item");
   let suppressions = document.getElementsByClassName("deleteItem");
 
+// Boucle qui ajoute un eventListener sur toute les vignettes d'article affichés dans le panier
+for (let i = 0; i < vignettes.length; i++) {
+    let vignette = vignettes[i];
+    vignette.addEventListener("input", (e) => {
+      //On envoie la quantité selectionnée dans le panier
+      panier[i].quantity = parseInt(e.target.value);
+      // On met à jour le localstorage
+      localStorage.setItem("panier", JSON.stringify(panier));
+      // on lance la fonction qui va mettre à jour le prix et le total de la page panier
+      recalc();
+    });
+  }
