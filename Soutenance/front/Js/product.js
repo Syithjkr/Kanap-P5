@@ -24,3 +24,7 @@ const fetchApiProduct = async () => {
     .then((res) => res.json())
     .then((data) => (product = data));
 };
+
+// Je modifie les éléments de la page par rapport au produit séléctionné
+const productAddInfos = async () => {
+  await fetchApiProduct();
