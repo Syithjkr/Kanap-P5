@@ -28,3 +28,14 @@ const fetchApiProduct = async () => {
 // Je modifie les éléments de la page par rapport au produit séléctionné
 const productAddInfos = async () => {
   await fetchApiProduct();
+   //Titre document
+   document.title = product.name;
+
+   //Image section
+   image.innerHTML = `<img src="${product.imageUrl}" alt="${product.altTxt}"></img>`;
+ 
+   //Prix
+   prix.innerHTML = product.price;
+ 
+   //Description
+   description.innerHTML = product.description;
