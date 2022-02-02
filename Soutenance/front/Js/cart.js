@@ -110,3 +110,18 @@ for (let i = 0; i < vignettes.length; i++) {
       recalc();
     });
   }
+//
+  // Boucle qui ajoute un eventListener sur toute les vignettes d'article affichés dans le panier
+  for (let i = 0; i < suppressions.length; i++) {
+    let suppr = suppressions[i];
+    suppr.addEventListener("click", () => {
+      // On supprime de notre panier l'élément de la boucle selectionné via splice()
+      panier.splice(i, 1);
+      // on supprime le code HTML de ce même élément
+      vignettes[i].remove();
+      // On met à jour le localstorage
+      localStorage.setItem("panier", JSON.stringify(panier));
+      // on lance la fonction qui va mettre à jour le prix et le total de la page panier
+      recalc();
+    });
+  }
