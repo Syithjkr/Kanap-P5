@@ -65,3 +65,5 @@ quantitySelector.addEventListener("change", (e) => {
     cartUser.quantity = parseInt(e.target.value);
   }
 });
+// ----------------NOUVELLE VALIDATION FORM-------------
+validateInput.addEventListener("click", () => {
