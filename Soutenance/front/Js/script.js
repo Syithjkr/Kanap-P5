@@ -8,3 +8,20 @@ async function fetchApi(){
       // Je stock le tout dans une variable articles
       .then((data) => (artcile = data));
 }
+
+/* Je crée une fonction avec une boucle pour afficher mes vignettes */
+async function canapDisplay() {
+    await fetchApi();
+    let items = document.getElementById("items");
+    for (let i = 0; i < articles.length; i++) {
+        items.innerHTML += `
+        <a href="./product.html?id=${articles[i]._id}">
+         <article>
+         <img src="${articles[i].imageUrl}" alt="${articles[i].altTxt}">
+          <h3 class="productName">${articles[i].name}</h3>
+          <p class="productDescription">${articles[i].description}</p>
+        </article>
+      </a>`;
+    }
+}
+canapDisplay ();
