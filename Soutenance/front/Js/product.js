@@ -59,3 +59,9 @@ productAddInfos();
 colorSelector.addEventListener("input", (e) => {
   cartUser.color = e.target.value;
 });
+// On recupere la quantité choisie dans l'objet cartUser
+quantitySelector.addEventListener("change", (e) => {
+  if (e.target.value != "" || e.target.value != 0) {
+    cartUser.quantity = parseInt(e.target.value);
+  }
+});
