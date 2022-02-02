@@ -67,3 +67,26 @@ quantitySelector.addEventListener("change", (e) => {
 });
 // ----------------NOUVELLE VALIDATION FORM-------------
 validateInput.addEventListener("click", () => {
+  function verifyInvalidInput() {
+    if (cartUser.color == "") {
+       // on averti l'utilisateur que le champ doit être renseigné
+       new Swal({
+        title: "Veuillez choisir une couleur valide",
+        icon: "error",
+        iconColor: "#3498db",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } else if (cartUser.quantity == 0 || cartUser.quantity == "") {
+      //on averti l'utilisateur que le champ doit être renseigné
+      new Swal({
+        title: "Veuillez choisir une quantité",
+        icon: "error",
+        iconColor: "#3498db",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } else {
+      setToLocalStorage();
+    }
+  }
