@@ -69,3 +69,32 @@ document.getElementById("totalPrice").innerHTML = Intl.NumberFormat(
     currency: "EUR",
   }
 ).format(total);
+
+//
+  //------ Fonction qui recalcule le total des quantité et du prix
+  function recalc() {
+    let cart = JSON.parse(localStorage.getItem("panier"));
+    let quantity = 0;
+    let total = 0;
+    for (article of cart) {
+      quantity += parseInt(article.quantity);
+      total += parseFloat(article.price) * parseInt(article.quantity);
+    }
+    document.getElementById("totalQuantity").innerHTML = quantity;
+    document.getElementById("totalPrice").innerHTML = Intl.NumberFormat(
+      "fr-FR",
+      {
+        style: "currency",
+        currency: "EUR",
+      }
+    ).format(total);
+
+    if (quantity == 0) {
+      localStorage.removeItem("panier");
+      panier = null;
+    }
+  }
+
+  let vignettes = document.getElementsByClassName("cart__item");
+  let suppressions = document.getElementsByClassName("deleteItem");
+
