@@ -46,3 +46,11 @@ const productAddInfos = async () => {
     selectorColor.innerHTML += `
     <option value="${product.colors[i]}">${product.colors[i]}</option>`;
   }
+  //on stock les infos nom/prix/id dans l'objet cartUser
+  cartUser.name = product.name;
+  cartUser.price = product.price;
+  cartUser.id = product._id;
+  cartUser.srcImg = product.imageUrl;
+  cartUser.altTxt = product.altTxt;
+};
+productAddInfos();
