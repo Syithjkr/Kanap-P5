@@ -263,3 +263,9 @@ if (orderId != undefined || orderId != "") {
     location.href = "confirmation.html?" + orderId + "#orderId";
   }
 }
+// Fontion qui envoie les id de tout les produits dans le tableau product
+function collectDatas() {
+    for (let article of panier) {
+      products.push(article.id);
+    }
+  }
