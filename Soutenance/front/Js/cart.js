@@ -251,3 +251,10 @@ function validEmail(email) {
         },
         body: JSON.stringify({ contact, products }),
       })
+// Ensuite on stock la réponse de l'api (orderId)
+.then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    orderId = data.orderId;
+  });
