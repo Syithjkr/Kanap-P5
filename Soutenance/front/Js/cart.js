@@ -258,3 +258,8 @@ function validEmail(email) {
   .then(function (data) {
     orderId = data.orderId;
   });
+// SI on a bien obtenu un orderId en réponse on redirige notre utilisateur
+if (orderId != undefined || orderId != "") {
+    location.href = "confirmation.html?" + orderId + "#orderId";
+  }
+}
