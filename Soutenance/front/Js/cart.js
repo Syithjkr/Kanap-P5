@@ -150,4 +150,5 @@ for (let i = 0; i < vignettes.length; i++) {
     errAddress = document.querySelectorAll(".cart__order__form__question p")[2];
     errCity = document.querySelectorAll(".cart__order__form__question p")[3];
     errEmail = document.querySelectorAll(".cart__order__form__question p")[4];
-   
+ // On récupère le bouton de soummision du formulaire
+ submitInfo = document.getElementById("order");
