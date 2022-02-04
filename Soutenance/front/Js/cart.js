@@ -239,3 +239,15 @@ function validEmail(email) {
       validForm = false;
     }
   }
+  // Eventlistener qui fonctionne seulement si tout les champs sont correctement rempli
+  submitInfo.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Fonction fetch qui envoie à l'API un objet contenant l'objet 'contact' et le tableau 'products'
+    async function sendData() {
+      await fetch("https://api-kanap-eu.herokuapp.com/api/products/order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ contact, products }),
+      })
