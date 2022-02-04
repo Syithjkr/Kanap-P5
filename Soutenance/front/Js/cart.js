@@ -164,3 +164,8 @@ inputLastName.addEventListener("change", (e) => {
     validLastName(e.target.value);
     contact.lastName = e.target.value;
   });
+  // EventListener qui récupère l'adresse
+  inputAddress.addEventListener("change", (e) => {
+    validAddress(e.target.value);
+    contact.address = e.target.value;
+  });
