@@ -192,3 +192,34 @@ function validFirstName(firstName) {
       validForm = false;
     }
   }
+// Fonction qui vérifie à l'aide d'une RegExp que le champ nom ne contiens pas de chiffre
+function validLastName(lastName) {
+    if (lastName.length == 0) {
+      errLastName.innerHTML = "Votre prénom n'est pas renseigné !";
+      validForm = false;
+    } else if (!/[0-9]/.test(lastName)) {
+      errLastName.innerText = "";
+      validForm = true;
+    } else {
+      errLastName.innerText = "Votre nom ne peut pas contenir de chiffre";
+      return false;
+    }
+  }
+  function validAddress(address) {
+    if (address.length == 0) {
+      errAddress.innerHTML = "Votre adresse n'est pas renseigné !";
+      validForm = false;
+    } else {
+      errAddress.innerHTML = "";
+      validForm = true;
+    }
+  }
+  function validCity(city) {
+    if (city.length == 0) {
+      errCity.innerHTML = "Votre ville n'est pas renseigné !";
+      validForm = false;
+    } else {
+      errCity.innerHTML = "";
+      validForm = true;
+    }
+  }
