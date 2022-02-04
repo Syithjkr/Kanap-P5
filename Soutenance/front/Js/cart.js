@@ -159,3 +159,8 @@ for (let i = 0; i < vignettes.length; i++) {
    validFirstName(e.target.value);
    contact.firstName = e.target.value;
  });
+// EventListener qui récupère le nom de famille
+inputLastName.addEventListener("change", (e) => {
+    validLastName(e.target.value);
+    contact.lastName = e.target.value;
+  });
