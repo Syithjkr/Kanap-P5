@@ -143,4 +143,11 @@ for (let i = 0; i < vignettes.length; i++) {
   )[3];
   inputEmail = document.querySelectorAll(
     ".cart__order__form__question input"
-  )[4];Ò
+  )[4];
+    // On récupère aussi les balise qui afficheront les erreurs si il y en a
+    errFirstName = document.querySelectorAll(".cart__order__form__question p")[0];
+    errLastName = document.querySelectorAll(".cart__order__form__question p")[1];
+    errAddress = document.querySelectorAll(".cart__order__form__question p")[2];
+    errCity = document.querySelectorAll(".cart__order__form__question p")[3];
+    errEmail = document.querySelectorAll(".cart__order__form__question p")[4];
+   
