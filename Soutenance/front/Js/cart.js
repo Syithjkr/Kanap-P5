@@ -179,3 +179,16 @@ inputEmail.addEventListener("change", (e) => {
     validEmail(e.target.value);
     contact.email = e.target.value;
   });
+// Fonction qui vérifie à l'aide d'une RegExp que le champ prénom ne contiens pas de chiffre
+function validFirstName(firstName) {
+    if (firstName.length == 0) {
+      errFirstName.innerHTML = "Votre prénom n'est pas renseigné !";
+      validForm = false;
+    } else if (!/[0-9]/.test(firstName)) {
+      errFirstName.innerText = "";
+      validForm = true;
+    } else {
+      errFirstName.innerText = "Votre prénom ne peut pas contenir de chiffre";
+      validForm = false;
+    }
+  }
