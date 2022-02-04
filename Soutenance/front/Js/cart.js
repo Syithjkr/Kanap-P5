@@ -174,3 +174,8 @@ inputCity.addEventListener("change", (e) => {
     validCity(e.target.value);
     contact.city = e.target.value;
   });
+// EventListener qui récupère l'email
+inputEmail.addEventListener("change", (e) => {
+    validEmail(e.target.value);
+    contact.email = e.target.value;
+  });
