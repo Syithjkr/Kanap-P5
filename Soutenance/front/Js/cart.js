@@ -169,3 +169,8 @@ inputLastName.addEventListener("change", (e) => {
     validAddress(e.target.value);
     contact.address = e.target.value;
   });
+// EventListener qui récupère la ville
+inputCity.addEventListener("change", (e) => {
+    validCity(e.target.value);
+    contact.city = e.target.value;
+  });
