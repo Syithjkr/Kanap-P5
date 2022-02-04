@@ -152,3 +152,10 @@ for (let i = 0; i < vignettes.length; i++) {
     errEmail = document.querySelectorAll(".cart__order__form__question p")[4];
  // On récupère le bouton de soummision du formulaire
  submitInfo = document.getElementById("order");
+
+ alidForm = false;
+ // EventListener qui récupère le prénom
+ inputFirstName.addEventListener("change", (e) => {
+   validFirstName(e.target.value);
+   contact.firstName = e.target.value;
+ });
