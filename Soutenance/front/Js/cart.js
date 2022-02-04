@@ -125,3 +125,22 @@ for (let i = 0; i < vignettes.length; i++) {
       recalc();
     });
   }
+
+    //------Formulaire utilisateur
+
+  // On récupère nos balises d'input du formulaire
+  inputFirstName = document.querySelectorAll(
+    ".cart__order__form__question input"
+  )[0];
+  inputLastName = document.querySelectorAll(
+    ".cart__order__form__question input"
+  )[1];
+  inputAddress = document.querySelectorAll(
+    ".cart__order__form__question input"
+  )[2];
+  inputCity = document.querySelectorAll(
+    ".cart__order__form__question input"
+  )[3];
+  inputEmail = document.querySelectorAll(
+    ".cart__order__form__question input"
+  )[4];Ò
