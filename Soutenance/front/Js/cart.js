@@ -223,3 +223,19 @@ function validLastName(lastName) {
       validForm = true;
     }
   }
+// Fonction qui vérifie à l'aide d'une RegExp que le champ email est au format "texte@texte.txt"
+function validEmail(email) {
+    let emailRegExp = new RegExp(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    );
+    if (email.length == 0) {
+      errEmail.innerHTML = "Votre mail n'est pas renseigné !";
+      validForm = false;
+    } else if (emailRegExp.test(email)) {
+      errEmail.innerHTML = "";
+      validForm = true;
+    } else {
+      errEmail.innerHTML = "Votre mail n'est pas valide !";
+      validForm = false;
+    }
+  }
