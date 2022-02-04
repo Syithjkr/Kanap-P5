@@ -269,3 +269,37 @@ function collectDatas() {
       products.push(article.id);
     }
   }
+// SI tout les champs sont valides (validForm = true) on continue l'execution du code
+if (validForm) {
+    if (panier) {
+      new Swal({
+        title: "Commande en cours...",
+        icon: "question",
+        iconColor: "yellow",
+        confirmButtonColor: "#2c3e50",
+        showConfirmButton: false,
+      });
+      collectDatas();
+      sendData();
+    } else {
+      new Swal({
+        title: "Votre panier est vide !",
+        icon: "error",
+        iconColor: "red",
+        confirmButtonColor: "#2c3e50",
+        timer: 3000,
+        showConfirmButton: false,
+      });
+    }
+  }
+// SINON on reverifie les champs
+else {
+    validFirstName(inputFirstName.value);
+    validLastName(inputLastName.value);
+    validAddress(inputAddress.value);
+    validCity(inputCity.value);
+    validEmail(inputEmail.value);
+  }
+});
+}
+}
